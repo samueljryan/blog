@@ -1,0 +1,34 @@
+﻿@using Microsoft.AspNetCore.Identity
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>This is the Admin Page</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th> <u> Users </u> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in ViewBag.users)
+        {
+            
+            <tr>
+                <td>
+                    @user.Email
+                </td>
+            </tr>
+        }
+    </tbody>
+   
+</table>
+
+
+
+
+
+
+

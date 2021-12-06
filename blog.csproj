@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-blog-041CA9CA-8357-4D66-BD1C-3E3E3F59A772</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\danme\.nuget\packages\microsoft.net.compilers\1.0.0\build\..\tools\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20211108213532_initialsetup.cs" />
+    <Compile Remove="Data\Migrations\20211108213532_initialsetup.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211115232847_commentsection.cs" />
+    <Compile Remove="Data\Migrations\20211115232847_commentsection.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211118234725_Update1.cs" />
+    <Compile Remove="Data\Migrations\20211118234725_Update1.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211130002413_AddAdminAccount.cs" />
+    <Compile Remove="Data\Migrations\20211130002413_AddAdminAccount.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <!--  <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.3" />       -->
+	<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.19" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.19" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.19" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.21" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.21">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+    <PackageReference Include="TinyMCE.Blazor" Version="0.0.8" />
+  </ItemGroup>
+
+</Project>

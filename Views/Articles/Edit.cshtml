@@ -1,0 +1,62 @@
+﻿@model blog.Models.Article
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<head>
+    <script src="https://cdn.tiny.cloud/1/p1haepqzg61zx113bt7939egbzrlzov6albwr5tbkg5mrfj3/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <script runat="Server">
+        tinymce.init({
+            selector: 'textarea.tinymce',
+            plugins: 'a11ychecker advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+            toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter pageembed permanentpen table',
+            toolbar_mode: 'floating',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+
+        });
+
+
+    </script>
+</head>
+
+<h1>Edit</h1>
+
+<h4>Article</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ArticleId" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DatePosted" class="control-label"></label>
+                <input asp-for="DatePosted" class="form-control" />
+                <span asp-validation-for="DatePosted" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Post" class="control-label"></label>
+                <!-- <input asp-for="Post" class="form-control" /> -->
+
+                <textarea asp-for="Post" id="textarea" class="tinymce" runat="Server"> hello world</textarea>
+                <Editor />
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
